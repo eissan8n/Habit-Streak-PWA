@@ -1,3 +1,4 @@
+
 const STORAGE_KEY = 'habit-streak-pwa-data-v1';
 const LANG_KEY = 'habit-streak-pwa-lang';
 
