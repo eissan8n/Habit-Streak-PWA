@@ -1,0 +1,268 @@
+:root {
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --success: #059669;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+  --shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.topbar p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.container {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.habit-form {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  background: #e0e7ff;
+  color: var(--primary);
+}
+
+.secondary-btn:hover {
+  background: #c7d2fe;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat-box {
+  background: #f8faff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-box span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stat-box strong {
+  font-size: 1.1rem;
+}
+
+.weekly-breakdown {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-pill {
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.day-pill strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--primary);
+}
+
+.habit-list {
+  display: grid;
+  gap: 12px;
+}
+
+.habit-item {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  background: #fff;
+}
+
+.habit-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.habit-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.habit-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #eef2ff;
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-btn.done {
+  background: var(--success);
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 12px 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+body[dir="rtl"] {
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+body[dir="rtl"] .topbar,
+body[dir="rtl"] .section-header,
+body[dir="rtl"] .habit-top {
+  direction: rtl;
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-breakdown {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .habit-form {
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}
