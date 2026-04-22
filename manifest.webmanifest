@@ -1,0 +1,12 @@
+{
+  "name": "متتبع العادات | Habit Tracker",
+  "short_name": "عادات | Habits",
+  "description": "تطبيق ويب تقدمي لتتبع العادات اليومية | A progressive web app for tracking daily habits",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f6fb",
+  "theme_color": "#2563eb",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": []
+}
