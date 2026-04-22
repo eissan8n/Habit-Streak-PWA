@@ -1,40 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#4f46e5" />
-  <meta name="description" content="Habit tracker PWA with streaks and weekly insights / تطبيق تتبع عادات مع سلاسل الإنجاز والإحصاءات الأسبوعية" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="تطبيق تتبع العادات | Habit Tracker PWA" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Habit Streak PWA | تطبيق تتبع العادات</title>
+  <title>متتبع العادات | Habit Tracker</title>
 </head>
 <body>
   <div class="app-shell">
-    <header class="topbar">
+    <header class="topbar card">
       <div>
-        <h1 id="app-title">Habit Tracker</h1>
-        <p id="app-subtitle">Build consistency every day</p>
+        <h1 id="appTitle">متتبع العادات</h1>
+        <p id="appSubtitle">تابع عاداتك اليومية وحافظ على سلسلة الإنجاز</p>
       </div>
-      <button id="lang-toggle" class="secondary-btn" aria-label="Switch language / تبديل اللغة">العربية</button>
+      <button id="langToggle" class="secondary-btn" aria-label="تبديل اللغة | Toggle Language">EN</button>
     </header>
 
-    <main class="container">
+    <main class="main-content">
       <section class="card form-card">
-        <h2 id="add-habit-title">Add Habit</h2>
-        <form id="habit-form" class="habit-form">
-          <input id="habit-name" type="text" maxlength="60" required placeholder="Habit name / اسم العادة" aria-label="Habit name / اسم العادة" />
-          <button type="submit" id="add-habit-btn">Add Habit</button>
+        <h2 id="addHabitTitle">إضافة عادة جديدة</h2>
+        <form id="habitForm">
+          <label for="habitName" id="habitNameLabel">اسم العادة | Habit Name</label>
+          <div class="input-row">
+            <input id="habitName" type="text" maxlength="60" required placeholder="اكتب اسم العادة | Enter habit name" />
+            <button type="submit" class="primary-btn" id="addHabitButton">إضافة | Add</button>
+          </div>
         </form>
       </section>
 
-      <section class="card insights-card">
-        <div class="section-header">
-          <h2 id="weekly-insights-title">Weekly Insights</h2>
-          <span id="week-range" class="muted"></span>
-        </div>
+      <section class="card stats-card">
+        <h2 id="weeklyStatsTitle">ملخص هذا الأسبوع</h2>
         <div class="stats-grid">
           <div class="stat-box">
+            <span class="stat-label" id="totalHabitsLabel">إجمالي العادات</span>
+            <strong id="totalHabitsValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label" id="completedTodayLabel">المنجز اليوم</span>
+            <strong id="completedTodayValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label" id="weeklyCompletionLabel">إنجاز الأسبوع</span>
+            <strong id="weeklyCompletionValue">0%</strong>
+          </div>
+        </div>
+        <div class="week-days" id="weekDays"></div>
+      </section>
+
+      <section class="card habits-card">
+        <div class="section-head">
+          <h2 id="habitsListTitle">العادات</h2>
+        </div>
+        <div id="emptyState" class="empty-state">لا توجد عادات بعد. أضف عادة جديدة للبدء. | No habits yet. Add a new habit to get started.</div>
+        <div id="habitsList" class="habits-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+  </html>          <div class="stat-box">
             <span id="stat-total-label">Total Check-ins</span>
             <strong id="stat-total">0</strong>
           </div>
