@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="description" content="Habit tracker PWA with streaks and weekly insights / تطبيق تتبع عادات مع سلاسل الإنجاز والإحصاءات الأسبوعية" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Habit Streak PWA | تطبيق تتبع العادات</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1 id="app-title">Habit Tracker</h1>
+        <p id="app-subtitle">Build consistency every day</p>
+      </div>
+      <button id="lang-toggle" class="secondary-btn" aria-label="Switch language / تبديل اللغة">العربية</button>
+    </header>
+
+    <main class="container">
+      <section class="card form-card">
+        <h2 id="add-habit-title">Add Habit</h2>
+        <form id="habit-form" class="habit-form">
+          <input id="habit-name" type="text" maxlength="60" required placeholder="Habit name / اسم العادة" aria-label="Habit name / اسم العادة" />
+          <button type="submit" id="add-habit-btn">Add Habit</button>
+        </form>
+      </section>
+
+      <section class="card insights-card">
+        <div class="section-header">
+          <h2 id="weekly-insights-title">Weekly Insights</h2>
+          <span id="week-range" class="muted"></span>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span id="stat-total-label">Total Check-ins</span>
+            <strong id="stat-total">0</strong>
+          </div>
+          <div class="stat-box">
+            <span id="stat-best-label">Best Habit</span>
+            <strong id="stat-best">-</strong>
+          </div>
+          <div class="stat-box">
+            <span id="stat-active-label">Active Habits</span>
+            <strong id="stat-active">0</strong>
+          </div>
+        </div>
+        <div id="weekly-breakdown" class="weekly-breakdown"></div>
+      </section>
+
+      <section class="card habits-card">
+        <div class="section-header">
+          <h2 id="your-habits-title">Your Habits</h2>
+          <span id="today-label" class="muted"></span>
+        </div>
+        <div id="empty-state" class="empty-state">
+          <p id="empty-title">No habits yet</p>
+          <p id="empty-text">Add your first habit to start a streak.</p>
+        </div>
+        <div id="habit-list" class="habit-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
